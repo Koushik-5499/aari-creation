@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ========================================
+   VARIABLES & PREMIUM COLORS
+   ======================================== */
+:root {
+    /* Base Colors */
+    --clr-deep-teal: #004d4d;
+    --clr-teal: #00796b;
+    --clr-emerald: #009973;
+    
+    --clr-royal-purple: #4a148c;
+    --clr-purple: #6a1b9a;
+    --clr-deep-purple: #2a0845;
+    
+    --clr-wine: #64113f;
+    --clr-magenta: #c2185b;
+    --clr-pink: #fce4ec;
+    
+    --clr-peach: #ffe5d9;
+    --clr-cream: #fbf8f1;
+    --clr-ivory: #fffff0;
+    
+    --clr-gold: #d4af37;
+    --clr-gold-light: #f3e5ab;
+    --clr-gold-dark: #aa771c;
+    
+    --clr-text-dark: #1a1a1a;
+    --clr-text-light: #ffffff;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-body: 'Poppins', sans-serif;
+    
+    /* Gradients as requested */
+    --bg-cream-teal: linear-gradient(135deg, #fbf8f1 0%, #e0f2f1 100%);
+    --bg-light-peach: linear-gradient(135deg, #fbf8f1 0%, #ffe5d9 100%);
+    --bg-wine-magenta: linear-gradient(135deg, #64113f 0%, #c2185b 100%);
+    --bg-teal-emerald: linear-gradient(135deg, #004d4d 0%, #009973 100%);
+    --bg-purple-magenta: linear-gradient(135deg, #4a148c 0%, #c2185b 100%);
+    --bg-cream-pink: linear-gradient(135deg, #fbf8f1 0%, #fce4ec 100%);
+    --bg-deep-purple-wine: linear-gradient(135deg, #2a0845 0%, #64113f 100%);
+    
+    --grad-gold: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    --grad-whatsapp: linear-gradient(135deg, #128C7E, #25D366);
+    
+    /* UI Elements */
+    --section-padding: 100px 0;
+    --radius-lg: 20px;
+    --radius-md: 10px;
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; width: 100%; overflow-x: hidden; }
+body {
+    font-family: var(--font-body);
+    color: var(--clr-text-dark);
+    background-color: var(--clr-cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 600; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+
+.container { max-width: 1250px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+.section { padding: var(--section-padding); position: relative; overflow: hidden; }
+.text-center { text-align: center; }
+.text-gold { color: var(--clr-gold) !important; }
+.text-light { color: var(--clr-text-light) !important; }
+
+/* ========================================
+   BACKGROUND CLASSES
+   ======================================== */
+.bg-cream-teal { background: var(--bg-cream-teal); }
+.bg-cream-floral {
+    background-color: var(--clr-cream);
+    background-image: radial-gradient(var(--clr-gold) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    opacity: 0.95;
+}
+.bg-light-peach { background: var(--bg-light-peach); }
+.bg-wine-magenta { background: var(--bg-wine-magenta); }
+.bg-teal-emerald { background: var(--bg-teal-emerald); }
+.bg-purple-magenta { background: var(--bg-purple-magenta); }
+.bg-cream-pink { background: var(--bg-cream-pink); }
+.bg-footer { background: var(--bg-deep-purple-wine); }
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+.section-title { margin-bottom: 50px; position: relative; }
+.section-title h2 { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--clr-deep-teal); margin-bottom: 5px; line-height: 1.2; }
+.section-title.light h2 { color: var(--clr-text-light); }
+.luxury-script { font-family: var(--font-script); font-size: clamp(2rem, 4vw, 2.8rem); color: var(--clr-magenta); line-height: 1; z-index: 1; position: relative; }
+.light .luxury-script { color: var(--clr-gold-light); }
+
+.gold-separator {
+    height: 3px; width: 100px;
+    background: var(--grad-gold);
+    margin-top: 20px;
+    position: relative;
+    border-radius: 5px;
+}
+.gold-separator::after {
+    content: '✦'; position: absolute;
+    color: var(--clr-gold);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: var(--clr-cream); padding: 0 10px; font-size: 18px;
+}
+.light .gold-separator::after { background: var(--clr-wine); }
+.bg-teal-emerald .gold-separator::after { background: var(--clr-deep-teal); }
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn-whatsapp-main {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--grad-whatsapp); color: #fff;
+    padding: 15px 35px; border-radius: 50px;
+    font-weight: 600; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1.5px;
+    border: 2px solid var(--clr-gold);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer; position: relative; overflow: hidden;
+}
+.btn-whatsapp-main::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+.btn-whatsapp-main:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6), 0 0 15px var(--clr-gold);
+    color: #fff;
+}
+.btn-whatsapp-main:hover::before { left: 100%; }
+
+.btn-gold-filled {
+    display: inline-block; padding: 12px 30px; border-radius: 50px;
+    font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;
+    background: var(--grad-gold); color: var(--clr-text-dark);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); border: none; transition: 0.3s;
+}
+.btn-gold-filled:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6); }
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+nav {
+    position: sticky; top: 0; width: 100%; z-index: 1000;
+    padding: 20px 0; transition: all 0.4s ease;
+    background: rgba(251, 248, 241, 0.95); backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+}
+nav.scrolled { padding: 12px 0; background: rgba(0, 77, 77, 0.98); }
+.nav-container { max-width: 1250px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo a { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--clr-deep-teal); transition: 0.3s; }
+nav.scrolled .logo a { color: var(--clr-gold); }
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-link { color: var(--clr-text-dark); font-weight: 500; font-size: 0.95rem; text-transform: uppercase; position: relative; }
+nav.scrolled .nav-link { color: var(--clr-text-light); }
+.nav-link::after { content: ''; position: absolute; width: 0; height: 2px; background: var(--grad-gold); bottom: -5px; left: 0; transition: 0.3s; }
+.nav-link:hover::after { width: 100%; }
+.hamburger { display: none; cursor: pointer; }
+.hamburger .bar { width: 25px; height: 3px; background-color: var(--clr-deep-teal); margin: 5px auto; transition: 0.3s; }
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+.section-hero { min-height: 90vh; display: flex; align-items: center; }
+.hero-container { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+.hero-left { flex: 1; max-width: 600px; }
+.hero-script { font-family: var(--font-script); font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--clr-magenta); margin-bottom: -10px; }
+.hero-title { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; color: var(--clr-deep-teal); margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.05); }
+.hero-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); font-family: var(--font-body); font-weight: 300; color: var(--clr-text-dark); opacity: 0.9; margin-bottom: 40px; }
+
+.hero-right { flex: 1; display: flex; justify-content: center; position: relative; }
+.gold-frame-wrapper { position: relative; padding: 20px; }
+.gold-frame {
+    border: 8px solid var(--clr-gold);
+    border-radius: 300px 300px 0 0;
+    box-shadow: 0 20px 50px rgba(212,175,55,0.3), inset 0 0 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    background: var(--clr-ivory);
+}
+.hero-img { width: 100%; height: 650px; object-fit: cover; transition: transform 10s ease; }
+.gold-frame:hover .hero-img { transform: scale(1.1); }
+
+.premium-badge {
+    position: absolute; background: var(--grad-gold); color: var(--clr-text-dark);
+    padding: 10px 20px; border-radius: 30px; font-weight: 700; font-size: 0.9rem;
+    letter-spacing: 1px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 10;
+    border: 2px solid #fff;
+}
+.badge-handmade { top: 15%; left: -30px; animation: floatY 4s infinite ease-in-out; }
+.badge-custom { bottom: 15%; right: -30px; animation: floatY 4s infinite ease-in-out reverse; }
+
+/* ========================================
+   CATEGORY CARDS
+   ======================================== */
+.category-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
+.lux-cat-card {
+    position: relative; height: 450px; border-radius: 15px; overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); cursor: pointer;
+}
+.lux-cat-card img { width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1); }
+.card-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(74,20,140,0.9) 100%);
+    z-index: 1; transition: 0.4s;
+}
+.card-border {
+    position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px;
+    border: 1px solid rgba(212,175,55,0.5); border-radius: 10px; z-index: 2; transition: 0.4s;
+}
+.card-content { position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 3; color: #fff; text-align: center; }
+.card-content h3 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 5px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+.card-content p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px; font-weight: 300; }
+.cat-btn {
+    display: inline-block; border: 1px solid var(--clr-gold); color: var(--clr-gold);
+    padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+    text-transform: uppercase; transition: 0.3s;
+}
+
+.lux-cat-card:hover img { transform: scale(1.1); }
+.lux-cat-card:hover .card-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(194,24,91,0.9) 100%); }
+.lux-cat-card:hover .card-border { border-color: var(--clr-gold); box-shadow: inset 0 0 20px rgba(212,175,55,0.4); }
+.lux-cat-card:hover .cat-btn { background: var(--grad-gold); color: #000; border-color: transparent; }
+
+/* ========================================
+   AARI BLOUSE MASONRY COLLECTION
+   ======================================== */
+.gallery-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+.filter-btn {
+    background: #fff; border: 1px solid var(--clr-deep-teal); color: var(--clr-deep-teal);
+    padding: 8px 25px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;
+    cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.filter-btn:hover, .filter-btn.active { background: var(--grad-teal-emerald); color: #fff; border-color: transparent; box-shadow: 0 5px 15px rgba(0,77,77,0.3); }
+
+.masonry-gallery { column-count: 3; column-gap: 20px; }
+.masonry-item { break-inside: avoid; margin-bottom: 20px; position: relative; border-radius: 15px; overflow: hidden; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.masonry-item img { width: 100%; transition: transform 0.5s ease; }
+.masonry-overlay { position: absolute; inset: 0; background: rgba(0,77,77,0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; backdrop-filter: blur(2px); }
+.masonry-overlay span { color: #fff; font-weight: 600; font-size: 1.2rem; border: 2px solid var(--clr-gold); padding: 10px 20px; border-radius: 30px; transform: translateY(20px); transition: 0.4s; }
+.masonry-item:hover img { transform: scale(1.05); }
+.masonry-item:hover .masonry-overlay { opacity: 1; }
+.masonry-item:hover .masonry-overlay span { transform: translateY(0); }
+.masonry-label { position: absolute; bottom: 15px; left: 15px; background: rgba(255,255,255,0.95); color: var(--clr-deep-teal); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 2; border-left: 3px solid var(--clr-gold); }
+
+/* ========================================
+   FEATURED BRIDAL
+   ======================================== */
+.bridal-flex { display: flex; align-items: center; gap: 60px; }
+.bridal-text { flex: 1; color: #fff; }
+.bridal-text h2 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); line-height: 1.1; }
+.bridal-text p { font-size: clamp(1rem, 2vw, 1.2rem); margin-bottom: 30px; font-weight: 300; opacity: 0.9; }
+
+.bridal-img-wrapper { flex: 1; position: relative; }
+.bridal-img-wrapper img { border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 2px solid var(--clr-gold); width: 100%; max-height: 700px; }
+.corner-ornament { position: absolute; width: 60px; height: 60px; background: var(--grad-gold); }
+.corner-ornament.tl { top: -20px; left: -20px; clip-path: polygon(100% 0, 0 0, 0 100%); }
+.corner-ornament.br { bottom: -20px; right: -20px; clip-path: polygon(100% 100%, 0 100%, 100% 0); }
+
+/* ========================================
+   SILK THREAD BANGLES
+   ======================================== */
+.bangles-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.bangles-info h2 { font-size: clamp(2rem, 5vw, 3.5rem); color: #fff; margin-bottom: 5px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); line-height: 1.2; }
+.bangles-info .luxury-script { color: var(--clr-gold-light); margin-bottom: 20px; display: block; }
+.bangles-info ul { margin-bottom: 30px; }
+.bangles-info li { color: #fff; font-size: 1.2rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.bangles-info li::before { content: '✨'; color: var(--clr-gold); }
+
+/* Color Showcase */
+.bangle-colors { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+.color-swatch { width: 45px; height: 45px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative; cursor: pointer; transition: 0.3s; }
+.color-swatch:hover { transform: translateY(-5px) scale(1.1); border-color: var(--clr-gold); }
+.c-pink { background: #e91e63; } .c-maroon { background: #800000; } .c-teal { background: #008080; }
+.c-purple { background: #800080; } .c-green { background: #008000; } .c-multi { background: conic-gradient(red, yellow, green, blue, purple, red); }
+
+.bangles-poster { position: relative; }
+.bangles-poster img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); border: 4px solid var(--clr-gold); }
+
+/* ========================================
+   CUSTOM ORDER
+   ======================================== */
+.glass-form {
+    background: rgba(255, 255, 255, 0.95); padding: 50px; border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2); border-top: 5px solid var(--clr-gold);
+    max-width: 800px; margin: 0 auto;
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label { display: block; font-weight: 600; color: var(--clr-deep-teal); margin-bottom: 8px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px;
+    font-family: var(--font-body); font-size: 1rem; background: var(--clr-cream); transition: 0.3s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--clr-magenta); box-shadow: 0 0 10px rgba(194, 24, 91, 0.2); background: #fff; }
+
+/* ========================================
+   INSTAGRAM GALLERY
+   ======================================== */
+.insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.insta-grid img { width: 100%; aspect-ratio: 1; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+.insta-grid img:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+/* ========================================
+   CONTACT & FOOTER
+   ======================================== */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.glass-contact-card {
+    background: rgba(255, 255, 255, 0.08); padding: 15px 25px; border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15); display: flex; align-items: center; gap: 20px;
+    transition: 0.3s; margin-bottom: 15px; max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.glass-contact-card:hover { background: rgba(255, 255, 255, 0.15); transform: translateX(10px); border-color: var(--clr-gold); }
+.c-icon-wrapper { width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.2); flex-shrink: 0; }
+.wapp-grad { background: var(--grad-whatsapp); }
+.call-grad { background: var(--grad-gold); }
+.insta-grad { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.c-info strong { font-size: 1.2rem; color: var(--clr-gold); display: block; margin-bottom: 2px; }
+.c-info span { font-size: 1.05rem; color: #fff; }
+
+.contact-actions { display: flex; flex-direction: column; gap: 15px; margin-top: 40px; max-width: 400px; }
+.btn-contact {
+    color: #fff !important; padding: 15px 25px; border-radius: 50px; text-align: center;
+    font-weight: 600; transition: 0.3s; border: none; font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.btn-contact.wapp { background: var(--grad-whatsapp); }
+.btn-contact.call { background: var(--grad-gold); color: var(--clr-text-dark) !important; font-weight: 700; }
+.btn-contact.insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.btn-contact:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+
+.map-card { background: var(--clr-gold); padding: 5px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+.map-card iframe { width: 100%; min-height: 400px; border-radius: 15px; display: block; }
+
+.site-footer { padding: 60px 0 20px; color: var(--clr-ivory); overflow: hidden; }
+.footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
+.f-brand h2 { font-family: var(--font-heading); color: var(--clr-gold); font-size: 2.5rem; margin-bottom: 15px; }
+.f-links h4 { color: var(--clr-gold); font-size: 1.3rem; margin-bottom: 20px; }
+.f-links ul li { margin-bottom: 10px; opacity: 0.9; transition: 0.3s; }
+.f-links ul li:hover { color: var(--clr-gold); opacity: 1; transform: translateX(5px); }
+.f-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(212,175,55,0.3); opacity: 0.8; }
+
+/* ========================================
+   FLOATING WHATSAPP & LIGHTBOX
+   ======================================== */
+.floating-whatsapp {
+    position: fixed; bottom: 30px; right: 30px; background: #25D366; color: #fff;
+    width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5); z-index: 1000; transition: 0.3s; border: 2px solid #fff;
+}
+.floating-whatsapp:hover { transform: scale(1.1) rotate(-10deg); }
+.floating-whatsapp svg { width: 35px; height: 35px; fill: white; }
+
+.lightbox {
+    display: none; position: fixed; z-index: 2000; inset: 0; background: rgba(0,0,0,0.95);
+    align-items: center; justify-content: center; opacity: 0; transition: 0.3s;
+}
+.lightbox.active { display: flex; opacity: 1; }
+.lightbox-content { max-width: 90%; max-height: 90vh; border-radius: 10px; border: 3px solid var(--clr-gold); box-shadow: 0 0 50px rgba(212,175,55,0.3); }
+.lightbox-close { position: absolute; top: 20px; right: 30px; color: var(--clr-gold); font-size: 40px; cursor: pointer; transition: 0.3s; }
+.lightbox-close:hover { transform: scale(1.2) rotate(90deg); color: #fff; }
+.lightbox-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(212,175,55,0.2); color: var(--clr-gold); font-size: 30px; border: 1px solid var(--clr-gold); width: 50px; height: 50px; border-radius: 50%; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; }
+.lightbox-btn:hover { background: var(--clr-gold); color: #000; }
+.lightbox-prev { left: 20px; } .lightbox-next { right: 20px; }
+
+/* ========================================
+   DECORATIVE ELEMENTS
+   ======================================== */
+.dec-sparkle { position: absolute; color: var(--clr-gold); font-size: 20px; animation: twinkle 3s infinite alternate; opacity: 0.5; z-index: 1; }
+@keyframes twinkle { 0% { opacity: 0.2; transform: scale(0.8) rotate(0deg); } 100% { opacity: 1; transform: scale(1.2) rotate(180deg); } }
+.ds-1 { top: 10%; left: 5%; } .ds-2 { top: 20%; right: 10%; font-size: 30px; } .ds-3 { bottom: 15%; left: 15%; }
+
+/* ========================================
+   ANIMATIONS & RESPONSIVE
+   ======================================== */
+.fade-in-section { opacity: 0; transform: translateY(40px); transition: 0.8s ease-out; }
+.fade-in-section.is-visible { opacity: 1; transform: none; }
+@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+/* Desktop/Large Screens (Base rules apply) */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 992px) {
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-left { order: 1; max-width: 100%; margin-bottom: 30px; }
+    .hero-right { order: 2; width: 100%; }
+    .hero-img { height: 500px; }
+    .premium-badge { font-size: 0.8rem; padding: 8px 15px; }
+
+    .category-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .masonry-gallery { column-count: 2; }
+    
+    .bridal-flex, .bangles-layout, .contact-grid { flex-direction: column; text-align: center; }
+    .gold-separator::after { left: 50%; }
+    
+    .bangle-colors { justify-content: center; }
+    .bangles-info ul { text-align: left; display: inline-block; }
+    
+    .glass-contact-card, .contact-actions { margin: 0 auto 15px; }
+    .footer-top { text-align: center; justify-content: center; flex-direction: column; }
+    
+    .hamburger { display: block; }
+    .nav-links { 
+        position: fixed; left: -100%; top: 70px; flex-direction: column; 
+        background: var(--clr-deep-teal); width: 100%; text-align: center; 
+        transition: 0.4s; padding: 30px 0; height: calc(100vh - 70px); overflow-y: auto; z-index: 999;
+    }
+    .nav-links.active { left: 0; }
+    .nav-link { color: #fff !important; margin-bottom: 20px; display: block; padding: 10px; }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .section { padding: 60px 0; }
+    
+    .category-cards-grid { grid-template-columns: 1fr; }
+    
+    .hero-img { height: 350px; }
+    .bridal-img-wrapper img { max-height: 400px; }
+    
+    .masonry-gallery { column-count: 2; column-gap: 10px; }
+    .masonry-item { margin-bottom: 10px; }
+    .masonry-label { font-size: 0.6rem; padding: 3px 8px; bottom: 5px; left: 5px; }
+    .filter-btn { padding: 6px 15px; font-size: 0.8rem; }
+    
+    .insta-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    .form-grid { grid-template-columns: 1fr; }
+    .glass-form { padding: 30px 20px; }
+    
+    .btn-whatsapp-main { width: 100%; text-align: center; }
+    .contact-actions a { width: 100%; }
+    
+    .floating-whatsapp { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+    .floating-whatsapp svg { width: 25px; height: 25px; }
+    
+    .lightbox-btn { width: 40px; height: 40px; font-size: 20px; }
+    .lightbox-close { top: 10px; right: 15px; font-size: 30px; }
+}
+
+/* Very Small Mobile */
+@media (max-width: 400px) {
+    .masonry-gallery { column-count: 1; }
+    .color-swatch { width: 35px; height: 35px; }
+}
