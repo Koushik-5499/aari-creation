@@ -246,7 +246,7 @@ nav.scrolled .nav-link { color: var(--clr-text-light); }
     padding: 8px 25px; border-radius: 30px; font-weight: 600; font-size: 0.9rem;
     cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-.filter-btn:hover, .filter-btn.active { background: var(--grad-teal-emerald); color: #fff; border-color: transparent; box-shadow: 0 5px 15px rgba(0,77,77,0.3); }
+.filter-btn:hover, .filter-btn.active { background: var(--bg-teal-emerald); color: #fff; border-color: transparent; box-shadow: 0 5px 15px rgba(0,77,77,0.3); }
 
 .masonry-gallery { column-count: 3; column-gap: 20px; }
 .masonry-item { break-inside: avoid; margin-bottom: 20px; position: relative; border-radius: 15px; overflow: hidden; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
