@@ -402,7 +402,8 @@ nav.scrolled .nav-link { color: var(--clr-text-light); }
     .category-cards-grid { grid-template-columns: repeat(2, 1fr); }
     .masonry-gallery { column-count: 2; }
     
-    .bridal-flex, .bangles-layout, .contact-grid { flex-direction: column; text-align: center; }
+    .bridal-flex { flex-direction: column; text-align: center; }
+    .bangles-layout, .contact-grid { grid-template-columns: 1fr; text-align: center; }
     .gold-separator::after { left: 50%; }
     
     .bangle-colors { justify-content: center; }
