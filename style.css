@@ -251,11 +251,7 @@ nav.scrolled .nav-link { color: var(--clr-text-light); }
 .masonry-gallery { column-count: 3; column-gap: 20px; }
 .masonry-item { break-inside: avoid; margin-bottom: 20px; position: relative; border-radius: 15px; overflow: hidden; cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 .masonry-item img { width: 100%; transition: transform 0.5s ease; }
-.masonry-overlay { position: absolute; inset: 0; background: rgba(0,77,77,0.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; backdrop-filter: blur(2px); }
-.masonry-overlay span { color: #fff; font-weight: 600; font-size: 1.2rem; border: 2px solid var(--clr-gold); padding: 10px 20px; border-radius: 30px; transform: translateY(20px); transition: 0.4s; }
 .masonry-item:hover img { transform: scale(1.05); }
-.masonry-item:hover .masonry-overlay { opacity: 1; }
-.masonry-item:hover .masonry-overlay span { transform: translateY(0); }
 .masonry-label { position: absolute; bottom: 15px; left: 15px; background: rgba(255,255,255,0.95); color: var(--clr-deep-teal); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 2; border-left: 3px solid var(--clr-gold); }
 
 /* ========================================
