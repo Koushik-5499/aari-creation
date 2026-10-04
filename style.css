@@ -163,8 +163,9 @@ nav {
 }
 nav.scrolled { padding: 12px 0; background: rgba(0, 77, 77, 0.98); }
 .nav-container { max-width: 1250px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-.logo a { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--clr-deep-teal); transition: 0.3s; }
-nav.scrolled .logo a { color: var(--clr-gold); }
+.logo a { display: flex; align-items: center; transition: 0.3s; }
+.logo img { height: 60px; width: auto; object-fit: contain; transition: 0.3s; }
+nav.scrolled .logo img { height: 50px; }
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-link { color: var(--clr-text-dark); font-weight: 500; font-size: 0.95rem; text-transform: uppercase; position: relative; }
 nav.scrolled .nav-link { color: var(--clr-text-light); }
@@ -346,7 +347,7 @@ nav.scrolled .nav-link { color: var(--clr-text-light); }
 
 .site-footer { padding: 60px 0 20px; color: var(--clr-ivory); overflow: hidden; }
 .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; }
-.f-brand h2 { font-family: var(--font-heading); color: var(--clr-gold); font-size: 2.5rem; margin-bottom: 15px; }
+.footer-logo { height: 80px; width: auto; object-fit: contain; margin-bottom: 15px; border-radius: 5px; }
 .f-links h4 { color: var(--clr-gold); font-size: 1.3rem; margin-bottom: 20px; }
 .f-links ul li { margin-bottom: 10px; opacity: 0.9; transition: 0.3s; }
 .f-links ul li:hover { color: var(--clr-gold); opacity: 1; transform: translateX(5px); }

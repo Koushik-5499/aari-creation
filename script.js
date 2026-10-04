@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     whatsappButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const message = encodeURIComponent("Hello Sri Sadima Aari Creations, I am interested in your beautiful premium collections.");
+            const message = encodeURIComponent("Hello Sri Mahi Aari Creations, I am interested in your beautiful premium collections.");
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
         });
     });
